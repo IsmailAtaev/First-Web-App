@@ -13,9 +13,30 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/first")
 public class FirstController {
     @GetMapping("/hello")
-    public String helloPage(@RequestParam("name") String name, @RequestParam("surname") String surname, Model model) {
-        System.out.println("hello, " + name + " " + surname);
-        model.addAttribute("message", "Hello " + name + surname);
+    public String helloPage(@RequestParam("a") Integer a,
+                            @RequestParam("b") Integer b,
+                            @RequestParam("action") String action,
+                            Model model) {
+        Double result = new Double(0.0);
+        System.out.println("A = " + a + "" + "\tB = " + b);
+
+        switch (action) {
+            case "multiplication":
+                result = Double.valueOf(a * b);
+                break;
+            case "addition":
+                result = Double.valueOf(a + b);
+                break;
+            case "subtraction":
+                result = Double.valueOf(a - b);
+                break;
+            case "division":
+                result = Double.valueOf(a / b);
+                break;
+            default:
+                break;
+        }
+        model.addAttribute("message", "Result =  " + String.valueOf(result));
         return "first/hello";
     }
 
