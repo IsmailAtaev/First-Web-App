@@ -1,11 +1,11 @@
 package com.ataew.springcourse.controllers;
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Controller
@@ -27,7 +27,6 @@ public class FirstController {
     public String calculate(@RequestParam("a") int a, @RequestParam("b") int b,
                             @RequestParam("action") String action, Model model) {
         double result = 0.0;
-        System.out.println("A = " + a + "" + "\tB = " + b);
 
         switch (action) {
             case "multiplication":
@@ -49,5 +48,4 @@ public class FirstController {
         model.addAttribute("result", result);
         return "first/calculator";
     }
-
 }
