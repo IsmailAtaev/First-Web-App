@@ -1,9 +1,12 @@
 package com.ataew.springcourse.dao;
 
 import com.ataew.springcourse.models.Person;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class PersonDAO {
     private static int PEOPLE_COUNT;
     private List<Person> people;
