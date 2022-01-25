@@ -1,7 +1,6 @@
 package com.ataew.springcourse.dao;
 
 import com.ataew.springcourse.models.Person;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +14,14 @@ public class PersonDAO {
         people.add(new Person(++PEOPLE_COUNT, "Bob"));
         people.add(new Person(++PEOPLE_COUNT, "Mike"));
         people.add(new Person(++PEOPLE_COUNT, "Katy"));
+    }
+
+    public List<Person> index() {
+        return people;
+    }
+
+    public Person show(int id) {
+        return people.stream().filter(person -> person.getId() == id).findAny().orElse(null);
     }
 
 
