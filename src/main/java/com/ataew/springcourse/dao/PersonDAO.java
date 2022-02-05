@@ -2,7 +2,6 @@ package com.ataew.springcourse.dao;
 
 import com.ataew.springcourse.models.Person;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
